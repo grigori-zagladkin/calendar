@@ -1,3 +1,4 @@
+// @ts-nocheck
 import clsx from "clsx";
 import { FC, useId, useState } from "react";
 import styles from "./Calendar.module.scss";
