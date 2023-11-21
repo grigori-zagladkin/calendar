@@ -1,0 +1,33 @@
+.scroll {
+  &Content {
+    @apply overflow-auto h-[var(--scrollbarHeight)] py-0 px-4;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &Container {
+    @apply bg-white grid h-full relative overflow-hidden;
+    grid-template: auto / 1fr 50px;
+  }
+
+  &bar {
+    @apply grid gap-4 grid-flow-row p-4 place-items-center;
+    grid-template: auto 1fr auto / 1fr;
+
+    &Track {
+      @apply bottom-0 cursor-pointer absolute top-0 w-4 rounded-[12px] bg-slate-100;
+
+      &Thumb {
+        @apply block h-full relative w-4;
+      }
+    }
+
+    &Thumb {
+      @apply absolute w-4 bg-slate-300 rounded-[12px];
+    }
+  }
+}

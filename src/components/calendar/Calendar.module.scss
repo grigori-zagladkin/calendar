@@ -1,0 +1,17 @@
+.arrow {
+  @apply w-10 h-10 mr-10 border-t-slate-400 border-r-slate-400 border-4 border-b-0 border-l-0 cursor-pointer hover:border-t-slate-300 hover:border-r-slate-300 transition-colors;
+}
+
+.next,
+.prev {
+  @apply absolute top-[50%];
+  transform: translateY(-50%);
+}
+
+.next {
+  @apply rotate-[45deg] right-[-100px];
+}
+
+.prev {
+  @apply rotate-[-135deg] left-[-60px];
+}

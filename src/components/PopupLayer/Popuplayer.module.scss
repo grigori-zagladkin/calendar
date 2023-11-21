@@ -1,0 +1,43 @@
+.popup {
+  &Wrapper {
+    @apply w-screen h-screen bg-black/40 fixed flex left-0 top-0 items-center justify-center pointer-events-none transition-opacity opacity-0;
+    scrollbar-width: 0;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &Active {
+      @apply opacity-100 pointer-events-auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &Inner {
+    @apply p-5 rounded-xl overflow-hidden bg-white max-h-[var(--popupContentHeight)] w-[400px] pb-5;
+    scrollbar-width: 0;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.closeButton {
+  @apply m-0 p-0 border-0 bg-none relative w-[20px] h-[20px] cursor-pointer;
+
+  &::before,
+  &::after {
+    @apply content-[''] absolute left-0 right-0 z-10 top-[9px] h-[2px] bg-black rounded-[1px] hover:bg-black/70 transition-opacity;
+  }
+
+  &::before {
+    @apply rotate-45;
+  }
+
+  &::after {
+    @apply rotate-[-45deg];
+  }
+}
